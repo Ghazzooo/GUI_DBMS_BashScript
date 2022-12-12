@@ -39,7 +39,7 @@ then
          zenity --info \
         --text="Database Is Droped " 
          source ./main.sh
-   else
+      else
          zenity --error \
         --text="Database Not Exists"
          source ./main.sh
