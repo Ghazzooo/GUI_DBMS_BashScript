@@ -16,7 +16,7 @@ then
         else
             source ./Connect-Menu.sh
         fi
-   while [[ ! -f ./database/$dbname/$tbname ]] || [[ -z $tbname ]] || [[ $tbname == *['!''*\ *@#/$\"*{^})(+_/|,;:~`.%&.=-]>[<?']* ]]
+   while [[ ! -f ./database/$dbname/$tbname ]] || [[ -z $tbname ]] || [[ $tbname == *['!''*\ *@#/$\"*{^})(+_/|,;:~`.%&.=-]>[<?']* ]] || [[ $tablename == " " ]] || [[ $tablename =~ [0-9] ]]
    do
    tbname=$(zenity --entry \
       --title="Invalid Input" \

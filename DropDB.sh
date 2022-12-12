@@ -9,7 +9,7 @@ if name=$(zenity --entry \
       --text="Which Database Do You Want To Drop ?" \
       --entry-text "")
 then
-   while [[ ! -d ./database/$name ]] || [[ -z $name ]] || [[ $name == *['!''*\ *@#/$\"*{^})(+_/|,;:~`.%&.=-]>[<?']* ]]
+   while [[ ! -d ./database/$name ]] || [[ -z $name ]] || [[ $name == *['!''*\ *@#/$\"*{^})(+_/|,;:~`.%&.=-]>[<?']* ]] || [[ $tablename == " " ]] || [[ $tablename =~ [0-9] ]]
    do
          name=$(zenity --entry \
          --title="It Must Be Only Characters" \
