@@ -40,7 +40,7 @@ if [ -f ./database/$dbname/$tablename ]
 then
     items=("Select All Records" "Select Record" "Back To Table Menu" )
 
-while item=$(zenity --title="Welcome : $USER" --text="Main Menu" --list \
+while item=$(zenity --title="Welcome : $USER" --text="Select Menu" --list \
                --column="select" "${items[@]}")
 do
     case "$item" in
