@@ -34,6 +34,12 @@ then
       
       if zenity --question \
          --text="Are you sure you wish to proceed?"; 
+         ret=$?
+         if (($ret == 0 )); then
+            :
+         else
+            source ./main.sh
+         fi
       then
          rm -r ./database/$name 
          zenity --info \
