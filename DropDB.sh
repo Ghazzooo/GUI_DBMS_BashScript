@@ -9,12 +9,25 @@ if name=$(zenity --entry \
       --text="Which Database Do You Want To Drop ?" \
       --entry-text "")
 then
+   ret=$?
+      if (($ret == 0 )); then
+         :
+      else
+         source ./main.sh
+      fi
    while [[ ! -d ./database/$name ]] || [[ -z $name ]] || [[ $name == *['!''*\ *@#/$\"*{^})(+_/|,;:~`.%&.=-]>[<?']* ]] || [[ $tablename == " " ]] || [[ $tablename =~ [0-9] ]]
    do
          name=$(zenity --entry \
-         --title="It Must Be Only Characters" \
+         --title="Invalid Input" \
          --text="PLease Enter Database Name Again :" \
          --entry-text "")
+         
+      ret=$?
+      if (($ret == 0 )); then
+         :
+      else
+         source ./main.sh
+      fi
    done
    while [[ -d ./database/$name ]]
    do  
