@@ -1,8 +1,8 @@
-      if [ `ls ./database/$dbname | wc -l` == 0 ]
-      then
-      zenity --error \
-        --text="Could not find Table"
-      source ./Connect-Menu.sh
+if [ `ls ./database/$dbname | wc -l` == 0 ]
+then
+   zenity --error \
+      --text="Could not find Table"
+   source ./Connect-Menu.sh
 fi      
 if tbname=$(zenity --entry \
    --title="Drop Tables" \
@@ -10,25 +10,25 @@ if tbname=$(zenity --entry \
    --entry-text "")
 then
    #========================================
-   exitstatus=$?
-         if [ $exitstatus = 0 ]; then
+   ret=$?
+        if (($ret == 0 )); then
             :
-         else
+        else
             source ./Connect-Menu.sh
-         fi
-   while [[ ! -f ./database/$dbname/$tbname ]] || [[ -z $tbname ]]
+        fi
+   while [[ ! -f ./database/$dbname/$tbname ]] || [[ -z $tbname ]] || [[ $tbname == *['!''*\ *@#/$\"*{^})(+_/|,;:~`.%&.=-]>[<?']* ]]
    do
    tbname=$(zenity --entry \
-         --title="Invalid Input" \
-         --text="PLease Enter Valid Name Of Table : " \ 
-         --entry-text "" )
+      --title="Invalid Input" \
+      --text="PLease Enter Valid Name Of Table : " \
+      --entry-text "")
          #=====================
-   exitstatus=$?
-         if [ $exitstatus = 0 ]; then
+   ret=$?
+        if (($ret == 0 )); then
             :
-         else
+        else
             source ./Connect-Menu.sh
-         fi
+        fi
    done
 
    while [[ -f ./database/$dbname/$tbname ]]

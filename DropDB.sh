@@ -9,12 +9,12 @@ if name=$(zenity --entry \
       --text="Which Database Do You Want To Drop ?" \
       --entry-text "")
 then
-   while [[ ! -d ./database/$name ]] || [[ -z $name ]]
+   while [[ ! -d ./database/$name ]] || [[ -z $name ]] || [[ $name == *['!''*\ *@#/$\"*{^})(+_/|,;:~`.%&.=-]>[<?']* ]]
    do
          name=$(zenity --entry \
          --title="It Must Be Only Characters" \
-         --text="PLease Enter Database Name Again : " \ 
-         --entry-text "" )
+         --text="PLease Enter Database Name Again :" \
+         --entry-text "")
    done
    while [[ -d ./database/$name ]]
    do  
