@@ -35,6 +35,12 @@ then
    do   
    if zenity --question \
          --text="Are you sure you wish to proceed?"; 
+         ret=$?
+         if (($ret == 0 )); then
+            :
+         else
+            source ./Connect-Menu.sh
+         fi
       then
          rm ./database/$dbname/$tbname 
          rm ./database/$dbname/$tbname.Type
