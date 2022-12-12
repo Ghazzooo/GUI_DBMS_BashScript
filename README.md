@@ -26,7 +26,6 @@
 
    - Display all records
    - Select Record By Primary-Key
-   - Select Column By Column Name
 
 ## Delete From Table Operations :
 
