@@ -1,6 +1,6 @@
 # GUI_DBMS_BashScript
 
-# Bash Shell Script Database Management System : 
+### Bash Shell Script Database Management System : 
 
 # Features :
 
@@ -44,5 +44,5 @@
 
 ## Contributors :
 
--[Abdallah Ahmed Abdelfattah](https://github.com/Abdalla1297).
--[Amr Ahmed Sayed Elghazawy ](https://github.com/Ghazzooo).
+- [Abdallah Ahmed Abdelfattah](https://github.com/Abdalla1297).
+- [Amr Ahmed Sayed Elghazawy ](https://github.com/Ghazzooo).
